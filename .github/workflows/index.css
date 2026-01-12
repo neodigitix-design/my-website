@@ -1,0 +1,78 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Hero section */
+.hero-css {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5vw;
+  overflow: hidden;
+}
+
+/* Blurred letter background */
+.hero-css::before {
+  content: 'A';
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40vw;
+  font-weight: 700;
+  color: #ffffff;
+  opacity: 0.08;
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Content block */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 90%;
+  width: 100%;
+}
+
+/* Heading */
+h1 {
+  font-size: clamp(32px, 8vw, 72px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+/* Subtitle */
+p {
+  font-size: clamp(16px, 4vw, 24px);
+  color: #bfbfbf;
+  line-height: 1.5;
+}
+
+/* Optional: Responsive tweaks for very small screens */
+@media (max-width: 400px) {
+  .hero-css {
+    padding: 8vw;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
